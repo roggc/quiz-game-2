@@ -16,12 +16,13 @@ const Play=({uid})=>{
 
     const dispatch=useDispatch()
 
-    const next=(isLast,value,setChecked)=>{
+    const next=(value,setChecked,setAnswerValue)=>{
         setChecked(false)
         setIndex(prev=>prev+1)
         if(value==='true'){ 
             setScore(prev=>prev+1)
         }
+        setAnswerValue(null)
     }
 
     useEffect(()=>{
@@ -33,11 +34,11 @@ const Play=({uid})=>{
 
     return (
         <div>
-            <ShowQuestionAndAnswers 
+            {questions[index]&&<ShowQuestionAndAnswers 
             next={next} 
             question={questions[index]}
             isLast={questions.length===index+1}
-            />
+            />}
         </div>
     )
 }
