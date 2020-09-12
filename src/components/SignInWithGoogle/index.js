@@ -28,7 +28,9 @@ const SignInWithGoogle=props=>{
           });
     }
     return (
+      <div className={style.cont}>
 <a onClick={clicked}>Sign In With Google</a>
+  </div>
     )
 }
 

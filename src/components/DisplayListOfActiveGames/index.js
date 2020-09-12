@@ -27,15 +27,16 @@ const DisplayListOfActiveGames=({uid})=>{
     
 
     return (
-        <div className={style.cont}>
+        <div className={style.col}>
             {activeGames.map(game=>
-                <div key={game.id} className={style.row}>
+            <div className={style.cont} key={game.id}>
+                <div className={style.row}>
                     <div className={style.item}>{game.id}</div>
-                    <div className={style.col+' '+style.item}>
+                    {/* <div className={style.col+' '+style.item}>
                         {game.users.map(user=>
                         <div key={user}>{user}</div>
                         )}
-                    </div>
+                    </div> */}
                     {
                         uid?
                         (game.users.some(u=>u===uid)?
@@ -62,9 +63,13 @@ const DisplayListOfActiveGames=({uid})=>{
                         <button className="btn btn-primary" 
                         onClick={scoresHandler.bind(this,game.id)}>scores</button>
                         </div>)
-                        :null
+                        :<div className={style.item}>
+                            <button className="btn btn-primary" 
+                            onClick={scoresHandler.bind(this,game.id)}>scores</button>
+                        </div>
                     }
                 </div>
+            </div>
             )}
         </div>
     )

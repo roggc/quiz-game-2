@@ -10,7 +10,7 @@ const DisplayInfoUser=props=>{
 
     if(user){
         content=
-        <div>
+        <div className={style.cont}>
             <img src={user.photoURL}
             alt='photo' className={style.photo}/>
             <div>{user.displayName}</div>

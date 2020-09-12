@@ -11,7 +11,7 @@ const SignOut=(props)=>{
     }
 
     return (
-        <div>
+        <div className={styles.cont}>
             <a onClick={signOut}>Sign Out</a>
         </div>
     )
